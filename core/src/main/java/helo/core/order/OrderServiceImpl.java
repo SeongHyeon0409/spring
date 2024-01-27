@@ -6,7 +6,10 @@ import helo.core.discount.RateDiscountPolicy;
 import helo.core.member.Member;
 import helo.core.member.MemberRepository;
 import helo.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
@@ -17,6 +20,7 @@ public class OrderServiceImpl implements OrderService{
         return memberRepository;
     }
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
