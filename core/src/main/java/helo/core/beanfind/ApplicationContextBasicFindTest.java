@@ -3,7 +3,6 @@ package helo.core.beanfind;
 import helo.core.AppConfig;
 import helo.core.member.MemberService;
 import helo.core.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
