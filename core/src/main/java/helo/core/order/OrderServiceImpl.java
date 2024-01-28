@@ -1,5 +1,6 @@
 package helo.core.order;
 
+import helo.core.annotation.MainDiscountPolicy;
 import helo.core.discount.DiscountPolicy;
 import helo.core.discount.FixDiscountPolicy;
 import helo.core.discount.RateDiscountPolicy;
@@ -12,11 +13,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
+
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository,
+                            @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     //테스트 용도
     public MemberRepository getMemberRepository() {
