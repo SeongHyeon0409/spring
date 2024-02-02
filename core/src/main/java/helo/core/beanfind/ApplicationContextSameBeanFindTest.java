@@ -45,7 +45,7 @@ public class ApplicationContextSameBeanFindTest {
         assertThat(beansOfType.size()).isEqualTo(2);
     }
 
-    @Configuration
+    //@Configuration
     static class SameBeanConfig {
 
         @Bean
